@@ -86,9 +86,9 @@
 				<% if ( user_id ) { %>
 				<div class="chatform">
 					<div class="newMessage">
-						<form id="newMessage" method="post" action="/party/<%= partyId %>">
+						<form id="newMessage" method="post" action="/party/<%= partyId %>" autocomplete="off">
 							<label for="newMessage"></label>
-							<input type="text" id="newMessageInput" name="newMessage" placeholder="Message Goes Here..." style="height:42px;width:90%;">
+							<input type="text" id="newMessageInput" name="newMessage" placeholder="Message Goes Here..." style="height:42px;width:90%;" autocomplete="off">
 						</form>
 					</div>
 				</div>
