@@ -1,7 +1,7 @@
-# partyline
-Partyline is a real-time topic-based group chat system.
+# Planticly
+Planticly is a real-time topic-based group chat system.
 
-Group Project - Partyline
+Group Project - Planticly
 -------------------------
 
 Goals
@@ -14,7 +14,7 @@ Goals
 Product Idea
 ------------
 
-TheCommons, Telejosh, Whisper, Telephone, Partyline, ChitChat, 
+TheCommons, Telejosh, Whisper, Telephone, Planticly, ChitChat, 
 LivChat
 
 1. Instant messaging service

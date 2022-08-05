@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PartyLine</title>
-    <link rel="icon" type="image/png" href= "/images/partyline_favicon_16x16px-01.png">
+    <title>Planticly</title>
+    <link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
     <link rel="stylesheet" href="/css/planticly.css">
-    <script src="/js/partyline.js" defer></script>
+    <script src="/js/planticly.js" defer></script>
 
 </head>
 <body>
     <div class="sidebar">
         <div class="logo">
-            <a href="/search"><img src="/images/partylineLogo_updated-032.png"></a>
+            <a href="/"><img src="/images/logo.png"></a>
         </div>
         
 		<%- include('partials/partyMenu') %>
 
         <div class="join">
-            <a href="/party">Join A New Party</a>
+            <a href="/party">Create New Garden</a>
         </div>
     </div>
     <div class="content">
@@ -46,7 +46,7 @@
 				<form method="post" action="/subscribe/<%= partyId %>"><input type="submit" value="Join Party"></form>
 				<% } %>
                 <ul>
-					<li><a href="/party/<%= partyId %>/new">Create Sub-Party</a></li>
+					<li><a href="/party/<%= partyId %>/new">Create Sub-Garden</a></li>
 					<%
 						if ( subParties.length ) {
 							for ( let i = 0; i < subParties.length; i++ ) {
@@ -85,8 +85,7 @@
                     <div class="newMessage">
                         <form id="newMessage" method="post" action="/party/<%= partyId %>">
                             <label for="newMessage"></label>
-                            <textarea type="text" id="newMessage" name="newMessage" rows="4" cols="50" placeholder="Message Goes Here..."></textarea>
-                            <input type="submit" value="Submit">
+                            <input type="text" id="newMessageInput" name="newMessage" placeholder="Message Goes Here..." style="height:42px;width:90%;">
                         </form>
                     </div>
                 </div>

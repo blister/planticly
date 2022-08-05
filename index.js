@@ -27,7 +27,7 @@ app.set('view engine', 'ejs');
 
 // session setup stuff for express session
 app.use(session({ 
-	secret: 'partyline_session',
+	secret: 'Planticly_session',
 	resave: true,
 	saveUninitialized: true
 }));

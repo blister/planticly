@@ -1,7 +1,7 @@
 {
-  "name": "partyline",
+  "name": "Planticly",
   "version": "1.0.0",
-  "description": "Partyline is a real-time topic-based group chat system.",
+  "description": "Planticly is a real-time topic-based group chat system.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeBootCamp13/partyline.git"
+    "url": "git+https://github.com/CodeBootCamp13/Planticly.git"
   },
   "keywords": [
     "chat",
@@ -19,9 +19,9 @@
   "author": "CBC 13 Class Project",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/CodeBootCamp13/partyline/issues"
+    "url": "https://github.com/CodeBootCamp13/Planticly/issues"
   },
-  "homepage": "https://github.com/CodeBootCamp13/partyline#readme",
+  "homepage": "https://github.com/CodeBootCamp13/Planticly#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^10.0.0",

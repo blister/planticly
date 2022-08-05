@@ -33,9 +33,9 @@ a {
 
 
 .content {
-	width: 100vw;
+	/* width: 100vw;
 	height: 100vh;
-	overflow: hidden;
+	overflow: hidden; */
 }
 
 .main {
@@ -78,7 +78,7 @@ a {
 	background-color: #3B4555;	
 	padding: 0px;
 	width: 15vw;
-	height: 100vh;
+	/* height: 100vh; */
 	overflow-y: auto;
 }
 
@@ -93,7 +93,7 @@ a {
 
 .chat {
     background-color: #4E5869;
-    height: 100vh;
+    /* height: 100vh; */
     width: 67vw;
     display: flex;
     flex-direction: column;
@@ -133,10 +133,10 @@ a {
 
 .messages{
 	overflow-y: auto;
-	height: 65vh;
-	margin-left: auto;
+	height: 70vh;
+	/* margin-left: auto;
 	margin-right: auto;
-	width: 61em;
+	width: 61em; */
 }
 
 .join {
@@ -196,10 +196,13 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
-#newMessage {
+#newMessageInput {
 	width: 97%;
 	height: 100px;
 	padding: 2px 20px;
+	color: #000;
+	background-color: #a2abbcd5;
+	font-size: 1.3em;
 }
 
 .join a, 
