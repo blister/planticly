@@ -17,9 +17,12 @@
 
         <%- include('partials/partyMenu') %>
 
-        <div class="join">
-            <a href="/party">Create New Garden</a>
-        </div>
+        <% if ( user_id ) { %>
+			<div class="join">
+				<a href="/party">Create New Garden</a>
+			</div>
+		% } %>
+
     </div>
     <div class="content">
         <div class="topbar">

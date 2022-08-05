@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planticly</title>
-    <link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
-    <link rel="stylesheet" href="/css/planticly.css">
-    <script src="/js/planticly.js" defer></script>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Planticly</title>
+	<link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
+	<link rel="stylesheet" href="/css/planticly.css">
+	<script src="/js/planticly.js" defer></script>
 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
-            <a href="/"><img src="/images/logo.png"></a>
-        </div>
-        
+	<div class="sidebar">
+		<div class="logo">
+			<a href="/"><img src="/images/logo.png"></a>
+		</div>
+		
 		<%- include('partials/partyMenu') %>
 
-        <div class="join">
-            <a href="/party">Create New Garden</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="topbar">
-            <%- include('partials/userBar') %>
-            <div class="search">
+		
+		<% if ( user_id ) { %>
+			<div class="join">
+				<a href="/party">Create New Garden</a>
+			</div>
+		% } %>
+  
+	</div>
+	<div class="content">
+		<div class="topbar">
+			<%- include('partials/userBar') %>
+			<div class="search">
 				<%- include('partials/searchBar') %>
-            </div>
-        </div>
-        <div class="main">
-            <div class="sidemenu">
-                <h2><%= partyName %></h2>
-                <p class="subhead"><%= partyDescription %></p>
+			</div>
+		</div>
+		<div class="main">
+			<div class="sidemenu">
+				<h2><%= partyName %></h2>
+				<p class="subhead"><%= partyDescription %></p>
 				<%
 				let amSubscribed = false;
 				for ( let i = 0; i < partyMenu.length; i++ ) {
@@ -45,7 +49,7 @@
 				%> 
 				<form method="post" action="/subscribe/<%= partyId %>"><input type="submit" value="Join Party"></form>
 				<% } %>
-                <ul>
+				<ul>
 					<li><a href="/party/<%= partyId %>/new">Create Sub-Garden</a></li>
 					<%
 						if ( subParties.length ) {
@@ -56,45 +60,45 @@
 							}
 						}
 					%>
-                </ul>
+				</ul>
 
 				
-            </div>
-            <div class="chat">
-                <div class="messages" id="newMessages">
-                    <% 
+			</div>
+			<div class="chat">
+				<div class="messages" id="newMessages">
+					<% 
 
-                    let newestMessageId = 0;
+					let newestMessageId = 0;
 					for ( let i = 0; i < messages.length; i++ ) {
-                        newestMessageId = messages[i].id;
+						newestMessageId = messages[i].id;
 					%>
-                    <div class="message"> 
-                        <div class="username"><a href="/user/<%= messages[i].user_id %>"><%= messages[i].username %></a></div>
-                        <div class="timestamp"><%= messages[i].sent_on %></div>
-                        <div class="messageText"><%= messages[i].message %></div>
-                    </div>
+					<div class="message"> 
+						<div class="username"><a href="/user/<%= messages[i].user_id %>"><%= messages[i].username %></a></div>
+						<div class="timestamp"><%= messages[i].sent_on %></div>
+						<div class="messageText"><%= messages[i].message %></div>
+					</div>
 					<% } %>
-                    
-                    <script>
-                        var newestMessage = <%=newestMessageId%>;
-                        var party_id = <%=partyId%>;
-                    </script>
-                </div>
+					
+					<script>
+						var newestMessage = <%=newestMessageId%>;
+						var party_id = <%=partyId%>;
+					</script>
+				</div>
 				<% if ( user_id ) { %>
-                <div class="chatform">
-                    <div class="newMessage">
-                        <form id="newMessage" method="post" action="/party/<%= partyId %>">
-                            <label for="newMessage"></label>
-                            <input type="text" id="newMessageInput" name="newMessage" placeholder="Message Goes Here..." style="height:42px;width:90%;">
-                        </form>
-                    </div>
-                </div>
+				<div class="chatform">
+					<div class="newMessage">
+						<form id="newMessage" method="post" action="/party/<%= partyId %>">
+							<label for="newMessage"></label>
+							<input type="text" id="newMessageInput" name="newMessage" placeholder="Message Goes Here..." style="height:42px;width:90%;">
+						</form>
+					</div>
+				</div>
 				<% } else { %>
 				<div class="chatform"><a href="/login">You can only post to this if you are logged in.</a></div>
 				<% } %>
-            </div>
-        </div>
-    </div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
 

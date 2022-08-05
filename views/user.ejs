@@ -1,45 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planticly</title>
-    <link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
-    <link rel="stylesheet" href="/css/planticly.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Planticly</title>
+	<link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
+	<link rel="stylesheet" href="/css/planticly.css">
 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
-            <a href="/"><img src="/images/logo.png"></a>
-        </div>
-        <%- include('partials/partyMenu') %>
-        <div class="join">
-            <button type="button">Create New Garden</button>
-        </div>
-    </div>
-    <div class="content">
-        <div class="topbar">
-            <%- include('partials/userBar') %>
-            <div class="search">
-                <%- include('partials/searchBar') %>
-            </div>
-        </div>
-        <div style="margin:10px;padding:10px;border:1px solid #ccc;">
-            <div> 
-                <h1><strong>My Gardens</strong></h1>
-            </div>
+	<div class="sidebar">
+		<div class="logo">
+			<a href="/"><img src="/images/logo.png"></a>
+		</div>
+		<%- include('partials/partyMenu') %>
+		<% if ( user_id ) { %>
+			<div class="join">
+				<a href="/party">Create New Garden</a>
+			</div>
+		% } %>
 
-            <div class="subs">
-                <% 
-                    for ( let i = 0; i < subs.length; i++ ) { %>
-                <div class="subscriptionlist"> 
-                    <div class="partySubs" style="margin:2px;padding-left:10px;"> + <a href="/party/<%= subs[i].party_id %>"><%= subs[i].name %></a></div> 
-                </div>
-                <% } %>
-            </div>
-        </div>
+	</div>
+	<div class="content">
+		<div class="topbar">
+			<%- include('partials/userBar') %>
+			<div class="search">
+				<%- include('partials/searchBar') %>
+			</div>
+		</div>
+		<div style="margin:10px;padding:10px;border:1px solid #ccc;">
+			<div> 
+				<h1><strong>My Gardens</strong></h1>
+			</div>
+
+			<div class="subs">
+				<% 
+					for ( let i = 0; i < subs.length; i++ ) { %>
+				<div class="subscriptionlist"> 
+					<div class="partySubs" style="margin:2px;padding-left:10px;"> + <a href="/party/<%= subs[i].party_id %>"><%= subs[i].name %></a></div> 
+				</div>
+				<% } %>
+			</div>
+		</div>
 
 </body>
 </html>
