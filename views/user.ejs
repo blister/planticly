@@ -26,20 +26,20 @@
                 <%- include('partials/searchBar') %>
             </div>
         </div>
-        <div> 
-            <h1><strong>My Gardens</strong></h1>
-        </div>
-
-        <div class="subs">
-            <% 
-				for ( let i = 0; i < subs.length; i++ ) { %>
-            <div class="subscriptionlist"> 
-                <br>
-                <div class="partySubs"> <a href="/party/<%= subs[i].party_id %>"><%= subs[i].name %></a></div> 
+        <div style="margin:10px;padding:10px;border:1px solid #ccc;">
+            <div> 
+                <h1><strong>My Gardens</strong></h1>
             </div>
-            <% } %>
-        </div>
 
+            <div class="subs">
+                <% 
+                    for ( let i = 0; i < subs.length; i++ ) { %>
+                <div class="subscriptionlist"> 
+                    <div class="partySubs" style="margin:2px;padding-left:10px;"> + <a href="/party/<%= subs[i].party_id %>"><%= subs[i].name %></a></div> 
+                </div>
+                <% } %>
+            </div>
+        </div>
 
 </body>
 </html>
