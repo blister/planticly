@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planticly</title>
-    <link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
-    <link rel="stylesheet" href="/css/planticly.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Planticly</title>
+	<link rel="icon" type="image/png" href= "/images/Planticly_favicon_16x16px-01.png">
+	<link rel="stylesheet" href="/css/planticly.css">
 
 </head>
 <body>
-    <div class="sidebar">
-        <div class="logo">
-            <img src="/images/logo.png">
-        </div>
+	<div class="sidebar">
+		<div class="logo">
+			<img src="/images/logo.png">
+		</div>
 
-        <%- include('partials/partyMenu') %>
+		<%- include('partials/partyMenu') %>
 
-        <div class="join">
-            <a href="/party">Create New Garden</a>
-        </div>
-    </div>
-    <div class="content">
-        <div class="topbar">
-            <%- include('partials/userBar') %>
-            <div class="search">
+		<% if ( user_id ) { %>
+			<div class="join">
+				<a href="/party">Create New Garden</a>
+			</div>
+		<% } %>
+	</div>
+	<div class="content">
+		<div class="topbar">
+			<%- include('partials/userBar') %>
+			<div class="search">
 				<%- include('partials/searchBar') %>
-            </div>
-        </div>
-        <div class="main">
-            <div class="sheet">
+			</div>
+		</div>
+		<div class="main">
+			<div class="sheet">
 				<form action="/login" method="post" class="login_form">
 					<div class="container">
 					<label for="uname"><b>Username</b></label>
@@ -50,7 +52,7 @@
 					</div>
 				</form>
 			</div>
-        </div>
-    </div>
+		</div>
+	</div>
 </body>
 </html>
