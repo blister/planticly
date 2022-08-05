@@ -186,7 +186,9 @@ td{
     padding: 10px;
 }
 
-input[type=text], input[type=password] {
+.content { width: 78%; }
+
+input[name=username], input[type=password] {
     width: 98.5%;
 	height: 40px;
     padding: 12px 20px;
