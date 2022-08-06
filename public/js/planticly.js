@@ -11,7 +11,7 @@ function newMessages() {
 				var newDate = new Date(results[i].sent_on);
 				var messageDiv = 
 				`<div class="message"> 
-					<div class="username">User ${results[i].user_id} </div>
+					<div class="username">User ${results[i].username} </div>
 					<div class="timestamp"> ${newDate} </div>
 					<div class="messageText"> ${results[i].message} </div>
 				</div>`;

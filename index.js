@@ -328,7 +328,7 @@ app.get('/user/:user_id', (req, res) => {
 
 app.get('/api/party/:party_id/:message_id' ,(req,res) => {
 	// TODO - send back the timestamp and user id
-	connection.query('SELECT id, user_id, sent_on, party_id, message FROM messages WHERE party_id = ? AND id > ?', [ req.params.party_id, req.params.message_id ], (err, results) => {
+	connection.query('SELECT m.id, m.user_id, m.sent_on, m.party_id, m.message, u.username FROM messages AS m LEFT JOIN users AS u ON m.user_id = u.id WHERE m.party_id = ? AND m.id > ?', [ req.params.party_id, req.params.message_id ], (err, results) => {
 		res.json(results);
 	});
 });
